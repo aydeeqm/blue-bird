@@ -7,8 +7,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    }),
-    '@babel/plugin-transform-runtime'
+    })
   ],
   module: {
     rules: [
@@ -18,7 +17,15 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              {
+                plugins: [
+                  '@babel/plugin-transform-runtime'
+                ]
+              }
+            ]
           }
         }
       }
