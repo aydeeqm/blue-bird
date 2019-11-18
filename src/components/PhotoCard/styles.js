@@ -15,6 +15,10 @@ const fadeInKeyframes = keyframes`
 const fadeIn = ({ time = '1s', type = 'ease' } = {}) =>
   css` animation: ${time} ${fadeInKeyframes} ${type};`
 
+const Article = styled.article`
+  min-height: 200px;
+`
+
 const ImgWrapper = styled.div`
   border-radius: 10px;
   display: block;
@@ -47,6 +51,7 @@ const Button = styled.button`
 `
 
 export {
+  Article,
   ImgWrapper,
   Img,
   Button
