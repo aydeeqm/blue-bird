@@ -9,7 +9,7 @@ function useCategoriesData () {
   useEffect(() => {
     setLoading(true)
     const getCategories = async () => {
-      let response = await window.fetch('https://blue-bird-server-jaded-sound.now.sh/categories')
+      let response = await window.fetch('https://blue-bird-server.aydeeqm.now.sh/categories')
       response = await response.json()
       setCategories(response)
       setLoading(false)
@@ -42,7 +42,7 @@ export const ListOfCategories = () => {
         loading
           ? <Item key='loading'><Category /></Item>
           : categories.map(
-            category => <Item key={category.id}><Category {...category} /></Item>
+            category => <Item key={category.id}><Category {...category} path={`/pet/${category.id}`} /></Item>
           )
       }
     </List>
