@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Category } from '../Category'
 import { List, Item } from './styles'
+import { Category } from '../Category'
 
 function useCategoriesData () {
   const [categories, setCategories] = useState([])
