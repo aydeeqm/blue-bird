@@ -1,6 +1,5 @@
 import React from 'react'
 import { ImgWrapper, Img, Article } from './styles'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { FavButton } from '../../components/FavButton'
 import { ToggleLikeMutation } from '../../container/ToggleLikeMutation'
@@ -8,10 +7,8 @@ import { Link } from '@reach/router'
 
 const DEFAULT_IMAGE = 'https://res.cloudinary.com/midudev/image/upload/w_300/q_80/v1560262103/dogs.png'
 
-export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
-  const key = `like-${id}`
+export const PhotoCard = ({ id, liked, likes = 0, src = DEFAULT_IMAGE }) => {
   const [show, elementRef] = useNearScreen()
-  const [liked, setLiked] = useLocalStorage(key, false)
 
   return (
     <Article ref={elementRef}>
@@ -26,14 +23,13 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
             {
               (toogleLike) => {
                 const handleFavClick = () => {
-                  !liked && toogleLike({
+                  toogleLike({
                     variables: {
                       input: { id }
                     }
                   })
-                  setLiked(!liked)
                 }
-                return <FavButton liked={likes} likes={likes} onClick={handleFavClick} />
+                return <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
               }
             }
           </ToggleLikeMutation>
