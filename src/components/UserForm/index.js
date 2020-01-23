@@ -19,7 +19,7 @@ export const UserForm = ({ onSubmit, title, error, disabled }) => {
       <Form onSubmit={hundleSubmit} disabled={disabled}>
         <Title>{title}</Title>
         <Input placeholder='Email' {...email} disabled={disabled} />
-        <Input placeholder='Password' {...password} disabled={disabled} />
+        <Input type='password' placeholder='Password' {...password} disabled={disabled} />
         <Button type='submit'>{title}</Button>
       </Form>
       {error && <Error>{error}</Error>}
