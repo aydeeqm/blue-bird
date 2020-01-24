@@ -29,6 +29,7 @@ export const PhotoCard = ({ id, liked, likes = 0, src = DEFAULT_IMAGE }) => {
                     }
                   })
                 }
+                console.log('like', liked, likes, id)
                 return <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
               }
             }
