@@ -1,17 +1,13 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import { ListOfCategories } from '../components/ListOfCategories'
 import { ListOfPhotoCards } from '../container/ListOfPhotoCards'
+import { Layout } from '../components/Layout'
 
 export const Home = ({ categoryId }) => {
   return (
-    <>
-      <Helmet>
-        <title>BlueBird - Tu app de fotos de mascotas</title>
-        <meta name='descripcion' content='Con BlueBird puedes encontrar fotos de animales domésticos muy bonitos' />
-      </Helmet>
+    <Layout title='Tu app de fotos de mascotas' subtitle='Con BlueBird puedes encontrar fotos de animales domésticos muy bonitos'>
       <ListOfCategories />
       <ListOfPhotoCards categoryId={categoryId} />
-    </>
+    </Layout>
   )
 }
