@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --history-api-fallback",
     "lint": "standard",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve:dev": "webpack --mode 'development' && npx serve dist -s --open"
+    "serve:dev": "webpack --mode 'development' && npx serve dist -s"
   },
   "author": "aydee qm",
   "license": "ISC",
