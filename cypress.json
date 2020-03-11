@@ -1,0 +1,6 @@
+{
+  "baseUrl": "https://blue-bird.aydeeqm.now.sh/",
+  "chromeWebSecurity": false,
+  "viewportWith": 500,
+  "viewportHeight": 800
+}

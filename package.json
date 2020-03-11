@@ -8,8 +8,8 @@
     "build": "webpack",
     "dev": "webpack-dev-server --history-api-fallback",
     "lint": "standard",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve:dev": "webpack --mode 'development' && npx serve dist -s"
+    "serve:dev": "webpack --mode 'development' && npx serve dist -s",
+    "test": "cypress open"
   },
   "author": "aydee qm",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "@babel/preset-react": "^7.7.0",
     "@babel/runtime": "^7.7.2",
     "babel-loader": "^8.0.6",
+    "cypress": "^4.1.0",
     "html-webpack-plugin": "^3.2.0",
     "standard": "^14.3.1",
     "webpack": "^4.41.2",
